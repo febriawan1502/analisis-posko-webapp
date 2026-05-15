@@ -1,0 +1,401 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.100.28:8501
+  External URL: http://182.10.161.75:8501
+
+[  8.33%] Membaca data gangguan valid ArcGIS...
+         Jumlah data valid koordinat: 100
+[ 16.67%] Memakai kolom mapping dari file upload...
+         Lookup master dilewati karena input dianggap sudah benar.
+[ 25.00%] Menghitung jumlah k ideal dengan Silhouette Score...
+         [  6.25%] Uji Silhouette k=18
+         [ 12.50%] Uji Silhouette k=19
+         [ 18.75%] Uji Silhouette k=20
+         [ 25.00%] Uji Silhouette k=21
+         [ 31.25%] Uji Silhouette k=22
+         [ 37.50%] Uji Silhouette k=23
+         [ 43.75%] Uji Silhouette k=24
+         [ 50.00%] Uji Silhouette k=25
+         [ 56.25%] Uji Silhouette k=26
+         [ 62.50%] Uji Silhouette k=27
+         [ 68.75%] Uji Silhouette k=28
+         [ 75.00%] Uji Silhouette k=29
+         [ 81.25%] Uji Silhouette k=30
+         [ 87.50%] Uji Silhouette k=31
+         [ 93.75%] Uji Silhouette k=32
+         [100.00%] Uji Silhouette k=33
+         K terbaik: 27
+         Silhouette Score terbaik: 0.4540
+[ 33.33%] Menjalankan K-Means dengan jumlah k terbaik...
+         K awal 27, target 28; split cluster terbesar 1 kali.
+         Split 1: cluster 1 (7 titik) -> 5 + 2 titik
+         Jumlah posko usulan sebelum split: 27
+         Jumlah posko usulan: 28
+         Visualisasi KMeans dibuat: 3 file
+[ 41.67%] Mapping data gangguan ke posko existing...
+         Terpetakan existing: 100
+         Tidak terpetakan: 0
+[ 50.00%] Menghitung jarak posko existing ke gangguan...
+[ 58.33%] Deteksi outlier jarak existing...
+         Batas IQR: > 8.6567 km
+         Batas minimal wajar: > 15.0000 km
+         Batas outlier final: > 15.0000 km
+         Outlier dibuang: 0
+         Data valid untuk perbandingan: 100
+[ 66.67%] Mengalokasikan gangguan valid ke posko usulan terdekat...
+         [100.00%] Alokasi chunk 1/1
+         Efisiensi total jarak untuk estimasi RPT: 53.54%
+[ 75.00%] Membandingkan parameter jarak dan response time...
+
+Ringkasan global:
+                                        METRIK       NILAI
+                 Jumlah data awal valid ArcGIS  100.000000
+                  Jumlah data tidak terpetakan    0.000000
+               Jumlah outlier existing dibuang    0.000000
+                      Jumlah data dibandingkan  100.000000
+                 Total jarak existing valid km  322.165105
+                   Total jarak usulan valid km  149.677051
+                          Penghematan total km  172.488054
+                      Penghematan total persen   53.540266
+                   Rata-rata jarak existing km    3.221651
+                     Rata-rata jarak usulan km    1.496771
+                      Median jarak existing km    2.745443
+                        Median jarak usulan km    1.339062
+                  Maks jarak existing valid km   12.182328
+                    Maks jarak usulan valid km    4.392671
+               Jumlah titik usulan lebih dekat   76.000000
+             Jumlah titik existing lebih dekat   24.000000
+                  Rata-rata RPT existing menit   16.850200
+           Rata-rata estimasi RPT usulan menit    7.828558
+                     Median RPT existing menit   15.000000
+              Median estimasi RPT usulan menit    6.968960
+                      Total RPT existing menit 1685.020000
+               Total estimasi RPT usulan menit  782.855813
+            Estimasi efisiensi total RPT menit  902.164187
+           Estimasi efisiensi total RPT persen   53.540266
+            Jumlah data valid RPT dibandingkan  100.000000
+       Jumlah gangguan RPT existing > 30 menit   13.000000
+Jumlah gangguan estimasi RPT usulan > 30 menit    0.000000
+       Proporsi RPT existing > 30 menit persen   13.000000
+Proporsi estimasi RPT usulan > 30 menit persen    0.000000
+[ 83.33%] Evaluasi beban kerja existing vs usulan...
+
+Perbandingan ketimpangan beban kerja:
+SKENARIO                     JENIS_BEBAN  Jumlah Posko  Total Beban  Rata-rata Beban per Posko  Minimum Beban  Maksimum Beban  Range Beban  Standar Deviasi  Coefficient of Variation (%)
+EXISTING  JUMLAH_GANGGUAN_PER_UNIT_KERJA            24   100.000000                   4.166667       1.000000       10.000000     9.000000         2.615450                     62.770805
+  USULAN  JUMLAH_GANGGUAN_PER_UNIT_KERJA            28   100.000000                   3.571429       1.000000        7.000000     6.000000         1.874361                     52.482096
+EXISTING   TOTAL_JARAK_KM_PER_UNIT_KERJA            24   322.165105                  13.423546       0.774622       38.643026    37.868404        11.036245                     82.215572
+  USULAN   TOTAL_JARAK_KM_PER_UNIT_KERJA            28   149.677051                   5.345609       0.000000       15.317039    15.317039         4.312431                     80.672406
+EXISTING  TOTAL_RPT_MENIT_PER_UNIT_KERJA            24  1685.020000                  70.209167      14.000000      195.700000   181.700000        55.131337                     78.524414
+  USULAN  TOTAL_RPT_MENIT_PER_UNIT_KERJA            28   782.855813                  27.959136       4.181376       75.385565    71.204189        15.242366                     54.516583
+EXISTING JUMLAH_RPT_GT_30_PER_UNIT_KERJA            24    13.000000                   0.541667       0.000000        3.000000     3.000000         0.883627                    163.131183
+  USULAN JUMLAH_RPT_GT_30_PER_UNIT_KERJA            28     0.000000                   0.000000       0.000000        0.000000     0.000000         0.000000                           NaN
+[ 91.67%] Menyiapkan parameter output...
+[100.00%] Menyimpan hasil analisis terpadu ke Excel...
+
+[100.00%] Selesai. File output: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091421\hasil_analisis_terpadu_posko.xlsx
+          Folder visualisasi KMeans: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091421\visualisasi_kmeans_terpadu
+          Grafik silhouette: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091421\hasil_analisis_terpadu_silhouette.png
+          Grafik beban: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091421\hasil_analisis_terpadu_beban_kerja.png
+[  8.33%] Membaca data gangguan valid ArcGIS...
+         Jumlah data valid koordinat: 100
+[ 16.67%] Memakai kolom mapping dari file upload...
+         Lookup master dilewati karena input dianggap sudah benar.
+[ 25.00%] Menghitung jumlah k ideal dengan Silhouette Score...
+         [  6.25%] Uji Silhouette k=18
+         [ 12.50%] Uji Silhouette k=19
+         [ 18.75%] Uji Silhouette k=20
+         [ 25.00%] Uji Silhouette k=21
+         [ 31.25%] Uji Silhouette k=22
+         [ 37.50%] Uji Silhouette k=23
+         [ 43.75%] Uji Silhouette k=24
+         [ 50.00%] Uji Silhouette k=25
+         [ 56.25%] Uji Silhouette k=26
+         [ 62.50%] Uji Silhouette k=27
+         [ 68.75%] Uji Silhouette k=28
+         [ 75.00%] Uji Silhouette k=29
+         [ 81.25%] Uji Silhouette k=30
+         [ 87.50%] Uji Silhouette k=31
+         [ 93.75%] Uji Silhouette k=32
+         [100.00%] Uji Silhouette k=33
+         K terbaik: 27
+         Silhouette Score terbaik: 0.4540
+[ 33.33%] Menjalankan K-Means dengan jumlah k terbaik...
+         K awal 27, target 28; split cluster terbesar 1 kali.
+         Split 1: cluster 1 (7 titik) -> 5 + 2 titik
+         Jumlah posko usulan sebelum split: 27
+         Jumlah posko usulan: 28
+         Visualisasi KMeans dibuat: 3 file
+[ 41.67%] Mapping data gangguan ke posko existing...
+         Terpetakan existing: 100
+         Tidak terpetakan: 0
+[ 50.00%] Menghitung jarak posko existing ke gangguan...
+[ 58.33%] Deteksi outlier jarak existing...
+         Batas IQR: > 8.6567 km
+         Batas minimal wajar: > 15.0000 km
+         Batas outlier final: > 15.0000 km
+         Outlier dibuang: 0
+         Data valid untuk perbandingan: 100
+[ 66.67%] Mengalokasikan gangguan valid ke posko usulan terdekat...
+         [100.00%] Alokasi chunk 1/1
+         Efisiensi total jarak untuk estimasi RPT: 53.54%
+[ 75.00%] Membandingkan parameter jarak dan response time...
+
+Ringkasan global:
+                                        METRIK       NILAI
+                 Jumlah data awal valid ArcGIS  100.000000
+                  Jumlah data tidak terpetakan    0.000000
+               Jumlah outlier existing dibuang    0.000000
+                      Jumlah data dibandingkan  100.000000
+                 Total jarak existing valid km  322.165105
+                   Total jarak usulan valid km  149.677051
+                          Penghematan total km  172.488054
+                      Penghematan total persen   53.540266
+                   Rata-rata jarak existing km    3.221651
+                     Rata-rata jarak usulan km    1.496771
+                      Median jarak existing km    2.745443
+                        Median jarak usulan km    1.339062
+                  Maks jarak existing valid km   12.182328
+                    Maks jarak usulan valid km    4.392671
+               Jumlah titik usulan lebih dekat   76.000000
+             Jumlah titik existing lebih dekat   24.000000
+                  Rata-rata RPT existing menit   16.850200
+           Rata-rata estimasi RPT usulan menit    7.828558
+                     Median RPT existing menit   15.000000
+              Median estimasi RPT usulan menit    6.968960
+                      Total RPT existing menit 1685.020000
+               Total estimasi RPT usulan menit  782.855813
+            Estimasi efisiensi total RPT menit  902.164187
+           Estimasi efisiensi total RPT persen   53.540266
+            Jumlah data valid RPT dibandingkan  100.000000
+       Jumlah gangguan RPT existing > 30 menit   13.000000
+Jumlah gangguan estimasi RPT usulan > 30 menit    0.000000
+       Proporsi RPT existing > 30 menit persen   13.000000
+Proporsi estimasi RPT usulan > 30 menit persen    0.000000
+[ 83.33%] Evaluasi beban kerja existing vs usulan...
+
+Perbandingan ketimpangan beban kerja:
+SKENARIO                     JENIS_BEBAN  Jumlah Posko  Total Beban  Rata-rata Beban per Posko  Minimum Beban  Maksimum Beban  Range Beban  Standar Deviasi  Coefficient of Variation (%)
+EXISTING  JUMLAH_GANGGUAN_PER_UNIT_KERJA            24   100.000000                   4.166667       1.000000       10.000000     9.000000         2.615450                     62.770805
+  USULAN  JUMLAH_GANGGUAN_PER_UNIT_KERJA            28   100.000000                   3.571429       1.000000        7.000000     6.000000         1.874361                     52.482096
+EXISTING   TOTAL_JARAK_KM_PER_UNIT_KERJA            24   322.165105                  13.423546       0.774622       38.643026    37.868404        11.036245                     82.215572
+  USULAN   TOTAL_JARAK_KM_PER_UNIT_KERJA            28   149.677051                   5.345609       0.000000       15.317039    15.317039         4.312431                     80.672406
+EXISTING  TOTAL_RPT_MENIT_PER_UNIT_KERJA            24  1685.020000                  70.209167      14.000000      195.700000   181.700000        55.131337                     78.524414
+  USULAN  TOTAL_RPT_MENIT_PER_UNIT_KERJA            28   782.855813                  27.959136       4.181376       75.385565    71.204189        15.242366                     54.516583
+EXISTING JUMLAH_RPT_GT_30_PER_UNIT_KERJA            24    13.000000                   0.541667       0.000000        3.000000     3.000000         0.883627                    163.131183
+  USULAN JUMLAH_RPT_GT_30_PER_UNIT_KERJA            28     0.000000                   0.000000       0.000000        0.000000     0.000000         0.000000                           NaN
+[ 91.67%] Menyiapkan parameter output...
+[100.00%] Menyimpan hasil analisis terpadu ke Excel...
+
+[100.00%] Selesai. File output: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091843\hasil_analisis_terpadu_posko.xlsx
+          Folder visualisasi KMeans: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091843\visualisasi_kmeans_terpadu
+          Grafik silhouette: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091843\hasil_analisis_terpadu_silhouette.png
+          Grafik beban: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091843\hasil_analisis_terpadu_beban_kerja.png
+          Peta: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_091843\hasil_kmeans_map.html
+[  8.33%] Membaca data gangguan valid ArcGIS...
+         Jumlah data valid koordinat: 49,002
+[ 16.67%] Memakai kolom mapping dari file upload...
+         Lookup master dilewati karena input dianggap sudah benar.
+[ 25.00%] Menghitung jumlah k ideal dengan Silhouette Score...
+         [  6.25%] Uji Silhouette k=18
+         [ 12.50%] Uji Silhouette k=19
+         [ 18.75%] Uji Silhouette k=20
+         [ 25.00%] Uji Silhouette k=21
+         [ 31.25%] Uji Silhouette k=22
+         [ 37.50%] Uji Silhouette k=23
+         [ 43.75%] Uji Silhouette k=24
+         [ 50.00%] Uji Silhouette k=25
+         [ 56.25%] Uji Silhouette k=26
+         [ 62.50%] Uji Silhouette k=27
+         [ 68.75%] Uji Silhouette k=28
+         [ 75.00%] Uji Silhouette k=29
+         [ 81.25%] Uji Silhouette k=30
+         [ 87.50%] Uji Silhouette k=31
+         [ 93.75%] Uji Silhouette k=32
+         [100.00%] Uji Silhouette k=33
+         K terbaik: 33
+         Silhouette Score terbaik: 0.4335
+[ 33.33%] Menjalankan K-Means dengan jumlah k terbaik...
+         K awal sudah sama dengan target 28; tidak ada split tambahan.
+         Jumlah posko usulan sebelum split: 33
+         Jumlah posko usulan: 33
+         Visualisasi KMeans dibuat: 2 file
+[ 41.67%] Mapping data gangguan ke posko existing...
+         Terpetakan existing: 49,002
+         Tidak terpetakan: 0
+[ 50.00%] Menghitung jarak posko existing ke gangguan...
+[ 58.33%] Deteksi outlier jarak existing...
+         Batas IQR: > 10.2466 km
+         Batas minimal wajar: > 15.0000 km
+         Batas outlier final: > 15.0000 km
+         Outlier dibuang: 0
+         Data valid untuk perbandingan: 49,002
+[ 66.67%] Mengalokasikan gangguan valid ke posko usulan terdekat...
+         [ 10.00%] Alokasi chunk 1/10
+         [ 20.00%] Alokasi chunk 2/10
+         [ 30.00%] Alokasi chunk 3/10
+         [ 40.00%] Alokasi chunk 4/10
+         [ 50.00%] Alokasi chunk 5/10
+         [ 60.00%] Alokasi chunk 6/10
+         [ 70.00%] Alokasi chunk 7/10
+         [ 80.00%] Alokasi chunk 8/10
+         [ 90.00%] Alokasi chunk 9/10
+         [100.00%] Alokasi chunk 10/10
+         Efisiensi total jarak untuk estimasi RPT: 40.09%
+[ 75.00%] Membandingkan parameter jarak dan response time...
+
+Ringkasan global:
+                                        METRIK         NILAI
+                 Jumlah data awal valid ArcGIS  49002.000000
+                  Jumlah data tidak terpetakan      0.000000
+               Jumlah outlier existing dibuang      0.000000
+                      Jumlah data dibandingkan  49002.000000
+                 Total jarak existing valid km 167321.904490
+                   Total jarak usulan valid km 100245.747713
+                          Penghematan total km  67076.156776
+                      Penghematan total persen     40.088091
+                   Rata-rata jarak existing km      3.414593
+                     Rata-rata jarak usulan km      2.045748
+                      Median jarak existing km      3.060568
+                        Median jarak usulan km      1.859442
+                  Maks jarak existing valid km     14.922401
+                    Maks jarak usulan valid km      8.201365
+               Jumlah titik usulan lebih dekat  33918.000000
+             Jumlah titik existing lebih dekat  15084.000000
+                  Rata-rata RPT existing menit     17.749469
+           Rata-rata estimasi RPT usulan menit     10.634046
+                     Median RPT existing menit     16.000000
+              Median estimasi RPT usulan menit      9.585905
+                      Total RPT existing menit 869759.460000
+               Total estimasi RPT usulan menit 521089.499097
+            Estimasi efisiensi total RPT menit 348669.960903
+           Estimasi efisiensi total RPT persen     40.088091
+            Jumlah data valid RPT dibandingkan  49002.000000
+       Jumlah gangguan RPT existing > 30 menit   4787.000000
+Jumlah gangguan estimasi RPT usulan > 30 menit    914.000000
+       Proporsi RPT existing > 30 menit persen      9.768989
+Proporsi estimasi RPT usulan > 30 menit persen      1.865230
+[ 83.33%] Evaluasi beban kerja existing vs usulan...
+
+Perbandingan ketimpangan beban kerja:
+SKENARIO                     JENIS_BEBAN  Jumlah Posko   Total Beban  Rata-rata Beban per Posko  Minimum Beban  Maksimum Beban  Range Beban  Standar Deviasi  Coefficient of Variation (%)
+EXISTING  JUMLAH_GANGGUAN_PER_UNIT_KERJA            28  49002.000000                1750.071429     291.000000     4641.000000  4350.000000      1104.025930                     63.084621
+  USULAN  JUMLAH_GANGGUAN_PER_UNIT_KERJA            33  49002.000000                1484.909091     396.000000     3332.000000  2936.000000       783.188330                     52.743184
+EXISTING   TOTAL_JARAK_KM_PER_UNIT_KERJA            28 167321.904490                5975.782303     945.714327    16480.732641 15535.018314      4223.464519                     70.676345
+  USULAN   TOTAL_JARAK_KM_PER_UNIT_KERJA            33 100245.747713                3037.749931    1340.741450     5642.443502  4301.702052      1141.931200                     37.591350
+EXISTING  TOTAL_RPT_MENIT_PER_UNIT_KERJA            28 869759.460000               31062.837857    4339.970000   100246.020000 95906.050000     23282.283109                     74.952209
+  USULAN  TOTAL_RPT_MENIT_PER_UNIT_KERJA            33 521089.499097               15790.590882    3850.694184    43520.094817 39669.400633      9683.041343                     61.321590
+EXISTING JUMLAH_RPT_GT_30_PER_UNIT_KERJA            28   4787.000000                 170.964286      12.000000      651.000000   639.000000       176.106340                    103.007678
+  USULAN JUMLAH_RPT_GT_30_PER_UNIT_KERJA            33    914.000000                  27.696970       5.000000       90.000000    85.000000        23.956321                     86.494375
+[ 91.67%] Menyiapkan parameter output...
+[100.00%] Menyimpan hasil analisis terpadu ke Excel...
+
+[100.00%] Selesai. File output: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092123\hasil_analisis_terpadu_posko.xlsx
+          Folder visualisasi KMeans: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092123\visualisasi_kmeans_terpadu
+          Grafik silhouette: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092123\hasil_analisis_terpadu_silhouette.png
+          Grafik beban: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092123\hasil_analisis_terpadu_beban_kerja.png
+          Peta: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092123\hasil_kmeans_map.html
+[  8.33%] Membaca data gangguan valid ArcGIS...
+         Jumlah data valid koordinat: 49,002
+[ 16.67%] Memakai kolom mapping dari file upload...
+         Lookup master dilewati karena input dianggap sudah benar.
+[ 25.00%] Menghitung jumlah k ideal dengan Silhouette Score...
+         [  9.09%] Uji Silhouette k=18
+         [ 18.18%] Uji Silhouette k=19
+         [ 27.27%] Uji Silhouette k=20
+         [ 36.36%] Uji Silhouette k=21
+         [ 45.45%] Uji Silhouette k=22
+         [ 54.55%] Uji Silhouette k=23
+         [ 63.64%] Uji Silhouette k=24
+         [ 72.73%] Uji Silhouette k=25
+         [ 81.82%] Uji Silhouette k=26
+         [ 90.91%] Uji Silhouette k=27
+         [100.00%] Uji Silhouette k=28
+         K terbaik: 24
+         Silhouette Score terbaik: 0.4313
+[ 33.33%] Menjalankan K-Means dengan jumlah k terbaik...
+         K awal 24, target 28; split cluster terbesar 4 kali.
+         Split 1: cluster 13 (4,815 titik) -> 2,136 + 2,679 titik
+         Split 2: cluster 4 (3,607 titik) -> 2,054 + 1,553 titik
+         Split 3: cluster 1 (3,584 titik) -> 1,984 + 1,600 titik
+         Split 4: cluster 2 (3,572 titik) -> 1,847 + 1,725 titik
+         Jumlah posko usulan sebelum split: 24
+         Jumlah posko usulan: 28
+         Visualisasi KMeans dibuat: 6 file
+[ 41.67%] Mapping data gangguan ke posko existing...
+         Terpetakan existing: 49,002
+         Tidak terpetakan: 0
+[ 50.00%] Menghitung jarak posko existing ke gangguan...
+[ 58.33%] Deteksi outlier jarak existing...
+         Batas IQR: > 10.2466 km
+         Batas minimal wajar: > 15.0000 km
+         Batas outlier final: > 15.0000 km
+         Outlier dibuang: 0
+         Data valid untuk perbandingan: 49,002
+[ 66.67%] Mengalokasikan gangguan valid ke posko usulan terdekat...
+         [ 10.00%] Alokasi chunk 1/10
+         [ 20.00%] Alokasi chunk 2/10
+         [ 30.00%] Alokasi chunk 3/10
+         [ 40.00%] Alokasi chunk 4/10
+         [ 50.00%] Alokasi chunk 5/10
+         [ 60.00%] Alokasi chunk 6/10
+         [ 70.00%] Alokasi chunk 7/10
+         [ 80.00%] Alokasi chunk 8/10
+         [ 90.00%] Alokasi chunk 9/10
+         [100.00%] Alokasi chunk 10/10
+         Efisiensi total jarak untuk estimasi RPT: 32.15%
+[ 75.00%] Membandingkan parameter jarak dan response time...
+
+Ringkasan global:
+                                        METRIK         NILAI
+                 Jumlah data awal valid ArcGIS  49002.000000
+                  Jumlah data tidak terpetakan      0.000000
+               Jumlah outlier existing dibuang      0.000000
+                      Jumlah data dibandingkan  49002.000000
+                 Total jarak existing valid km 167321.904490
+                   Total jarak usulan valid km 113530.552602
+                          Penghematan total km  53791.351888
+                      Penghematan total persen     32.148422
+                   Rata-rata jarak existing km      3.414593
+                     Rata-rata jarak usulan km      2.316855
+                      Median jarak existing km      3.060568
+                        Median jarak usulan km      2.006622
+                  Maks jarak existing valid km     14.922401
+                    Maks jarak usulan valid km     10.636890
+               Jumlah titik usulan lebih dekat  31616.000000
+             Jumlah titik existing lebih dekat  17386.000000
+                  Rata-rata RPT existing menit     17.749469
+           Rata-rata estimasi RPT usulan menit     12.043295
+                     Median RPT existing menit     16.000000
+              Median estimasi RPT usulan menit     10.856252
+                      Total RPT existing menit 869759.460000
+               Total estimasi RPT usulan menit 590145.518756
+            Estimasi efisiensi total RPT menit 279613.941244
+           Estimasi efisiensi total RPT persen     32.148422
+            Jumlah data valid RPT dibandingkan  49002.000000
+       Jumlah gangguan RPT existing > 30 menit   4787.000000
+Jumlah gangguan estimasi RPT usulan > 30 menit   1407.000000
+       Proporsi RPT existing > 30 menit persen      9.768989
+Proporsi estimasi RPT usulan > 30 menit persen      2.871311
+[ 83.33%] Evaluasi beban kerja existing vs usulan...
+
+Perbandingan ketimpangan beban kerja:
+SKENARIO                     JENIS_BEBAN  Jumlah Posko   Total Beban  Rata-rata Beban per Posko  Minimum Beban  Maksimum Beban  Range Beban  Standar Deviasi  Coefficient of Variation (%)
+EXISTING  JUMLAH_GANGGUAN_PER_UNIT_KERJA            28  49002.000000                1750.071429     291.000000     4641.000000  4350.000000      1104.025930                     63.084621
+  USULAN  JUMLAH_GANGGUAN_PER_UNIT_KERJA            28  49002.000000                1750.071429     624.000000     3038.000000  2414.000000       675.045070                     38.572430
+EXISTING   TOTAL_JARAK_KM_PER_UNIT_KERJA            28 167321.904490                5975.782303     945.714327    16480.732641 15535.018314      4223.464519                     70.676345
+  USULAN   TOTAL_JARAK_KM_PER_UNIT_KERJA            28 113530.552602                4054.662593    1811.285515     8113.363419  6302.077904      1482.261966                     36.556974
+EXISTING  TOTAL_RPT_MENIT_PER_UNIT_KERJA            28 869759.460000               31062.837857    4339.970000   100246.020000 95906.050000     23282.283109                     74.952209
+  USULAN  TOTAL_RPT_MENIT_PER_UNIT_KERJA            28 590145.518756               21076.625670    5101.563383    37102.484556 32000.921173      9226.760922                     43.777221
+EXISTING JUMLAH_RPT_GT_30_PER_UNIT_KERJA            28   4787.000000                 170.964286      12.000000      651.000000   639.000000       176.106340                    103.007678
+  USULAN JUMLAH_RPT_GT_30_PER_UNIT_KERJA            28   1407.000000                  50.250000       9.000000      125.000000   116.000000        34.887783                     69.428424
+[ 91.67%] Menyiapkan parameter output...
+[100.00%] Menyimpan hasil analisis terpadu ke Excel...
+
+[100.00%] Selesai. File output: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092701\hasil_analisis_terpadu_posko.xlsx
+          Folder visualisasi KMeans: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092701\visualisasi_kmeans_terpadu
+          Grafik silhouette: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092701\hasil_analisis_terpadu_silhouette.png
+          Grafik beban: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092701\hasil_analisis_terpadu_beban_kerja.png
+          Peta: D:\OneDrive - PLN\1 KULIAH\SKRIPSI\PENGOLAHAN DATA\webapp\output\web_runs\20260515_092701\hasil_kmeans_map.html
